@@ -1,0 +1,33 @@
+.search {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-gray-20);
+    padding: 2rem;
+}
+
+.search__input { 
+    margin-bottom: 1rem;
+}
+
+
+
+
+@media (--medium) {
+
+    .search {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+
+    .search__input {
+        flex: 1;
+        margin-bottom: 0;
+    }
+    
+    .search__button {
+        flex: 1;
+        text-align: right;
+    }
+
+}

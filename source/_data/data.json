@@ -1,30 +1,15 @@
 {
-	"title" : "DEG UI Project",
-	"mainId" : "main-content",
-	"primaryColors": [
-		{
-			"code": "#000000",
-			"name": "Black"
-		},
-		{
-			"code": "#FFFFFF",
-			"name": "White"
-		}
-	],
-	"secondaryColors": [
-		{
-			"code": "#999999",
-			"name": "Gray"
-		}
-	],
+	"title" : "Deterson Health Centers",
+	"mainId" : "mainContent",
 	"logo" : {
-		"url": "",
-		"alt": "Logo Alt"
+		"url": "../../images/logo.svg",
+		"alt": "Deterson Health Centers"
 	},
-	"button": {
-		"content": "Button",
-		"type": "button"
+	"hero": {
+		"src": "../../images/hospital.png",
+		"alt": "Deterson Health Centers"
 	},
+	"buttonText": "Button",
 	"video": {
 		"videoID": "5le9sYdYkM"
 	},
@@ -37,6 +22,9 @@
 		"type": "text",
 		"placeholder": "Placeholder Text",
 		"attributes": []
+	},
+	"icon": {
+		"class": "icon"
 	},
 	"textarea": {
 		"id": "textarea",
@@ -60,26 +48,214 @@
 			}
 		]
 	},
-	"field": {},
-	"primaryNav": [
-		{
-			"label": "Primary Nav Item 1",
-			"url": ""
+	"field": {
+		"id": "field",
+		"isInvalid": false,
+		"isDisabled": false,
+		"label": {
+			"content": "Label"
 		},
-		{
-			"label": "Primary Nav Item 2",
-			"url": ""
+		"input": {
+			"type": "text",
+			"placeholder": "Placeholder Text",
+			"isRequired": true,
+			"attributes": []
 		},
-		{
-			"label": "Primary Nav Item 3",
-			"url": ""
+		"textarea": {
+			"placeholder": "Placeholder Text",
+			"isRequired": true
 		},
-		{
-			"label": "Primary Nav Item 4",
-			"url": ""
+		"select": {
+			"isRequired": true,
+			"options": [
+				{
+					"label": "Option 1",
+					"value": "1"
+				},
+				{
+					"label": "Option 2",
+					"value": "2"
+				},
+				{
+					"label": "Option 2",
+					"value": "3"
+				}
+			]
 		}
-	],
-	"description" : "So, setting about it as methodically as men might smoke out a wasps' nest, the Martians spread this strange stifling vapour over the Londonward country. The horns of the crescent slowly moved apart, until at last they formed a line from Hanwell to Coombe and Malden. All night through their destructive tubes advanced.",
-	"blockquote": "A block quotation (also known as a long quotation or extract) is a quotation in a written document, that is set off from the main text as a paragraph, or block of text, and typically distinguished visually using indentation and a different typeface or smaller size quotation.",
-	"url" : "#"
+	},
+	"search" : {
+		"searchFormEelements": {
+			"label": {
+				"id": "searchzipcode",
+				"content": "Zip Code",
+				"styleModifier": "search-label"
+			},
+			"input": {
+				"id": "searchzipcode",
+				"type": "search",
+				"placeholder": "Search Zip Code",
+				"attributes": []
+			}
+		},
+		"searchFormButton" : {
+			"input": {
+				"id": "button",
+				"type": "submit",
+				"value": "Search",
+				"styleModifier": "button button--primary"
+			}
+		}
+
+	},
+	"doctorsDistanceFilter": {
+		"label": {
+			"id": "doctorSearchRadius",
+			"content": "Distance",
+			"styleModifier": "legend-label"
+		},
+		"input": {
+			"id": "range-input",
+			"type": "range",
+			"value": "30",
+			"attributes": [
+				{
+					"name": "min",
+					"value": "5"
+				},
+				{
+					"name": "max",
+					"value": "30"
+				},
+				{
+					"name": "step",
+					"value": "5"
+				}
+			]
+		},
+		"items": [
+			{
+				"stepValue": "5",
+				"stepNumber": "5"
+			},
+			{
+				"stepValue": "10",
+				"stepNumber": "10"
+			},
+			{
+				"stepValue": "15",
+				"stepNumber": "15"
+			},
+			{
+				"stepValue": "20",
+				"stepNumber": "20"
+			},
+			{
+				"stepValue": "25",
+				"stepNumber": "25"
+			},
+			{
+				"stepValue": "30",
+				"stepNumber": "All"
+			}
+		],
+		"currentDistanceStatus": "<div class=\"distance-status\">Current: <span class=\"js-active-distance\">All</span> miles from <span class=\"js-active-zipcode\">66204</span></div>"
+	},
+	"doctorsGenderFilter": {
+		"fieldGroup": {
+			"legend": "Gender",
+			"fieldList": {
+				"items": [
+					{
+						"field": {
+							"groupFieldClass": "checkbox",
+							"id": "male",
+							"label": {
+								"content": "Male"
+
+							},
+							"input": {
+								"name": "male",
+								"value": "male",
+								"cssClass": "gender-checkbox",
+								"type": "checkbox"
+							}
+						}
+					},
+					{
+						"field": {
+							"groupFieldClass": "checkbox",
+							"id": "female",
+							"label": {
+								"content": "Female"
+
+							},
+							"input": {
+								"name": "female",
+								"value": "female",
+								"cssClass": "gender-checkbox",
+								"type": "checkbox"
+							}
+						}
+					},
+					{
+						"field": {
+							"groupFieldClass": "checkbox",
+							"id": "nopreference",
+							"label": {
+								"content": "No Preference"
+
+							},
+							"input": {
+								"name": "nopreference",
+								"value": "nopreference",
+								"cssClass": "gender-checkbox",
+								"type": "checkbox"
+							}
+						}
+					}
+				]
+			}
+		}
+	},
+	"doctorsList": {
+		"doctorItems": [
+			{
+				"doctorName":"Susan M.Smith, MD",
+				"doctorNameUrl": "http://cnn.com",
+				"doctorSpeciality": "Women's Health Dermatology",
+				"doctorPhoto": "../../images/doctor-place-holder.jpg",
+				"doctorLocation": {
+					"doctorLocationItem": [
+						{
+							"doctorTown": "Arbor Creek",
+							"doctorTownUrl": "http://yahoo.com",
+							"doctorTownMile": "5 miles",
+							"doctorFacility": "Arbor Health Olate Health Family - Paolo",
+							"doctorFacilityUrl": "http://google.com",
+							"doctorFacilityMile": "10 miles"
+						}
+					]
+				}
+			},
+			{
+				"doctorName":"Susan M.Smith, MD",
+				"doctorNameUrl": "http://cnn.com",
+				"doctorSpeciality": "Women's Health Dermatology",
+				"doctorPhoto": "../../images/doctor-place-holder.jpg",
+				"doctorLocation": {
+					"doctorLocationItem": [
+						{
+							"doctorTown": "Arbor Creek",
+							"doctorTownUrl": "http://yahoo.com",
+							"doctorTownMile": "5 miles",
+							"doctorFacility": "Arbor Health Olate Health Family - Paolo",
+							"doctorFacilityUrl": "http://google.com",
+							"doctorFacilityMile": "10 miles"
+						}
+					]
+				}
+			}
+
+		]
+	}
 }

@@ -1,25 +1,40 @@
 :root {
+
 	--color-black: #000;
 	--color-white: #fff;
 
-	--color-text: var(--color-black);
+	--color-gray: #858585; 
+	--color-gray-10: #e4e1dc;
+	--color-gray-20:#efefef;
+	--color-gray-30: #dbd6cd;
+	--color-gray-40: #efefef;
 
-	--font-family-primary: Arial, 'Helvetica Neue', Helvetica, sans-serif;
-	--font-size-base: 1rem;
-	--font-weight-normal: 400;
+	--color-blue: #006595;
+	--color-blue-10: #25aae1;
 
-	--width-page: 80rem;
-	--width-gutter: 1rem;
+	--color-green:  #4b9c3d;
+	--color-green-10:  #5ab44b;
 
+	--color-text: var(--color-blue-20);
+
+	--font-family-primary: 'Cabin', sans-serif;
+
+	--base-font-size: 1em;
+
+	--width-page: 62rem;
 	--spacing-horizontal: 1rem;
 	--spacing-vertical: 1.5rem;
+	--gutter-width: 1rem;
 
-	--border-radius: 0.25rem;
+	--border-radius: 0.15rem;
 
 	--anim-duration: 0.5s;
 	--anim-easing: ease-in-out;
+
 }
 
 @custom-media --small (min-width: 30em);
 @custom-media --medium (min-width: 48em);
+@custom-media --medium-down (max-width: 48em);
 @custom-media --large (min-width: 64em);
+@custom-media --max (min-width: 101.25em);

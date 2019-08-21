@@ -1,0 +1,14 @@
+{{#doctorsDistanceFilter}}
+<div class="filter-section filter-section__distance">
+    {{> basics-label }}
+    {{> basics-input }}
+    <ol class="range-label">
+    {{# items}}
+        <li class="range-label__item" data-step="{{stepValue}}">
+            {{stepNumber}}
+        </li>
+    {{/ items }}
+    </ol>
+    {{{currentDistanceStatus}}}    
+</div>
+{{/doctorsDistanceFilter}}

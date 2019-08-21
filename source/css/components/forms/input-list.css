@@ -1,0 +1,7 @@
+.field-list {
+    list-style: none;
+}
+
+.field-list__item {
+    margin: 0 0 .3rem;
+}

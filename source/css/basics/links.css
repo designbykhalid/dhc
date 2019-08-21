@@ -1,13 +1,17 @@
 a {
-	&:hover, &:focus {
+	color: var(--color-blue-10);
+	text-decoration: none;
 
+	&:hover {
+		color: var(--color-blue-10);
+		text-decoration: underline;
 	}
 
 	&:active {
-
+		color: var(--color-blue);
 	}
 
 	&:visited {
-
+		color: var(--color-blue-10);
 	}
 }

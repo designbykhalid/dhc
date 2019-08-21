@@ -1,9 +1,12 @@
 {{# field }}
-<div class="field{{# styleModifier }} {{ styleModifier }}{{/ styleModifier }}">
+<div class="field {{ styleModifier }}">
 	{{> basics-label }}
-	{{> basics-input }}
-	{{# isInvalid }}
-		{{> basics-field-error-message }}
-	{{/ isInvalid }}
+    {{> basics-input }}
+    {{# isIcon }}
+        {{> basics-date-icon }}
+    {{/ isIcon }}
+    {{# isInvalid }}
+        {{> basics-field-error-message }}
+    {{/ isInvalid }}
 </div>
 {{/ field }}

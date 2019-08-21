@@ -1,1 +1,45 @@
 /* Layout Styles */
+.container {
+    padding: 1rem;
+    background-color: var(--color-white);
+    max-width: var(--page-width);
+    margin: 0 auto;
+}
+
+.shim {
+    margin: 0 auto;
+    max-width: var(--width-page);
+}
+
+.content--2col-left {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-content {
+    flex-grow: 1;
+}
+
+.content {
+    padding: 3rem 0;
+}
+
+.general-content {
+    flex-grow: 1;
+}
+
+@media (--small) {
+    .content--2col-left {
+        flex-direction: row;
+
+        .general-content {
+            padding-left: 4rem;
+        }
+    }
+
+    .sidebar-content {
+        width: 11.5rem;
+        flex-grow: 0;
+    }
+    
+}

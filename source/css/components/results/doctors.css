@@ -1,0 +1,65 @@
+.doctors-total-result {
+    font-size: 1.375rem;
+    color: var(--color-gray);
+    margin-bottom: 3.125rem;
+}
+
+.doctor-image {
+    width: 6.25rem;
+    margin: 0 1rem 1rem 0;
+}
+
+.doctor-general {
+    font-size: 1.25rem;
+    color: var(--color-black);
+}
+
+.doctor-list {
+    list-style: none;
+}
+
+.doctor-list__item {
+    border-bottom: 2px solid var(--color-gray-20);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.doctor-location {
+    list-style: none;
+}
+
+.doctor-location__distance {
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.doctor-location__item {
+    margin-bottom: 1rem;
+}
+
+@media (--medium) {
+
+    .doctor-image {
+        margin-bottom: 0;
+    }
+
+    .doctor-info__location {
+        flex: 1;
+        margin-left: 5rem;
+    }
+
+    .doctor-info__general {
+        display: flex;
+    }
+
+    .doctor-info-container {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .doctor-info {
+        display: flex;
+    }
+
+}

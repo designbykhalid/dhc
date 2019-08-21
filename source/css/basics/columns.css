@@ -1,0 +1,45 @@
+.cols {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+@media (--medium) {
+    .cols {
+        flex-direction: row;
+    }
+    .cols--1 {
+        & > .col {
+            width: 100%;
+        }
+    }
+    .cols--2,
+    .cols--3,
+    .cols--4, {
+        & > .col {
+            width: 50%;
+        }
+    }
+}
+
+@media (--large) {
+    .cols--3 {
+        & > .col {
+            width: 33.33%;
+            &.col--3-2 {
+                width: 66.66%;
+            }
+        }
+    }
+    .cols--4 {
+        & > .col {
+            width: 25%;
+            &.col--4-2 {
+                width: 50%;
+            }
+            &.col--4-3 {
+                width: 75%;
+            }
+        }
+    }
+}

@@ -1,4 +1,4 @@
-@import 'utilities/**/*.css';
-@import 'basics/**/*.css';
-@import 'components/**/*.css';
-@import 'templates/**/*.css';
+@import './utilities/**/*.css';
+@import './basics/**/*.css';
+@import './components/**/*.css';
+@import './templates/**/*.css';

@@ -1,29 +1,42 @@
 .button {
+    font-family: var(--font-family-primary);
+	display: inline-block;
+	appearance: none;
+	padding: 0.35rem 0.65rem;
+	font-size: 0.75rem;
+	border: 1px solid;
+	transition: background-color var(--anim-duration);
 
-	&:hover, &:focus {
-
-	}
-
-	&:active {
-
+	&:enabled {
+		&:hover {
+			cursor: pointer;
+		}
 	}
 
 	&:disabled {
-		
+		background: var(--color-gray-10);
+		&:hover {
+			background: var(--color-gray-10);
+			cursor: not-allowed;
+		}
 	}
 }
 
-.button--alt {
+.button--primary {
+	max-width: 11.4rem;
+	width: 100%;
+	color: var(--color-white);
+	border-width: 0;
+	padding: .757rem 1rem;
+	font-size: 1.1rem;
+	font-weight: 700;
+	border-radius: 4px;
+	background-color: var(--color-green-10);
 
-	&:hover, &:focus {
-
+	&:hover {
+		background-color: var(--color-green);
 	}
-
 	&:active {
-
-	}
-
-	&:disabled {
-		
+		background-color: var(--color-green-10);
 	}
 }

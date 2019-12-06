@@ -9,7 +9,8 @@ module.exports = {
             config: {
                 directories: directories({
 					imagesDestPath: `${outputDir}`,
-					fontsDestPath: `${outputDir}`
+                    fontsDestPath: `${outputDir}`,
+                    apiPath: `${outputDir}`
 				})
             }
         }

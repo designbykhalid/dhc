@@ -24,11 +24,11 @@
 						<img src="..&#x2F;..&#x2F;images&#x2F;hospital.png" alt="hero.alt" />
 					</div>
 					<div class="search-form">
-						<form class="js-form-container">
+						<form class="js-search-form" data-api="../../api/doctors.json">
 							<div class="search">
 								<div class="search__input">
 									<label for="searchzipcode" class="label search-label">Zip Code</label>
-									<input class="input " id="searchzipcode" name="searchzipcode" type="search" placeholder="Search Zip Code" value="" />
+									<input class="input js-value" id="searchzipcode" name="searchzipcode" type="search" placeholder="Search Zip Code" value="" pattern="[0-9]{5}" maxlength="5" />
 								</div>
 								<div class="search__button">
 									<input class="input button button--primary" id="button" name="button" type="submit" value="Search" />
@@ -40,7 +40,7 @@
 						<div class="sidebar-content">
 							<div class="filter-section filter-section__distance">
 								<label for="doctorSearchRadius" class="label legend-label">Distance</label>
-								<input class="input " id="" name="" type="range" value="30" min="5" max="30" step="5" />
+								<input class="input " id="range-input" name="range-input" type="range" value="30" min="5" max="30" step="5" />
 								<ol class="range-label">
 									<li class="range-label__item" data-step="5"> 5 </li>
 									<li class="range-label__item" data-step="10"> 10 </li>
@@ -78,18 +78,47 @@
 									<div class="doctor-info">
 										<div class="doctor-info__general">
 											<div class="doctor-image">
-												<img src="avatar.png" alt="" />
+												<img src="doctor-place-holder.jpg" alt="" />
 											</div>
 											<div class="doctor-general">
-												<h3 class="doctor-name">Susan M.Smith, MD</h3>
+												<h3 class="doctor-name"><a href="doctorNameUrl">Susan M.Smith, MD</a></h3>
 												<p class="doctor-speciality">Women's Health Dermatology</p>
 											</div>
 										</div>
 										<div class="doctor-info__location">
 											<ul class="doctor-location">
 												<li class="doctor-location__item">
-													<a href="http://yahoo.com" class="doctor-town">Arbor Creek</a>
-													<div class="doctor-distance">5 miles</div>
+													<a href="http://yahoo.com" class="doctor-location__link">Arbor Creek</a>
+													<div class="doctor-location__distance">5 miles</div>
+												</li>
+												<li class="doctor-location__item">
+													<a href="http://google.com" class="doctor-location__link">Arbor Health Olate Health Family - Paolo</a>
+													<div class="doctor-location__distance">10 miles</div>
+												</li>
+											</ul>
+										</div>
+									</div>
+								</li>
+								<li class="doctor-list__item">
+									<div class="doctor-info">
+										<div class="doctor-info__general">
+											<div class="doctor-image">
+												<img src="doctor-place-holder.jpg" alt="" />
+											</div>
+											<div class="doctor-general">
+												<h3 class="doctor-name"><a href="doctorNameUrl">Susan M.Smith, MD</a></h3>
+												<p class="doctor-speciality">Women's Health Dermatology</p>
+											</div>
+										</div>
+										<div class="doctor-info__location">
+											<ul class="doctor-location">
+												<li class="doctor-location__item">
+													<a href="http://yahoo.com" class="doctor-location__link">Arbor Creek</a>
+													<div class="doctor-location__distance">5 miles</div>
+												</li>
+												<li class="doctor-location__item">
+													<a href="http://google.com" class="doctor-location__link">Arbor Health Olate Health Family - Paolo</a>
+													<div class="doctor-location__distance">10 miles</div>
 												</li>
 											</ul>
 										</div>
@@ -103,7 +132,7 @@
 			</footer>
 		</div>
 		<script src="https://cdn.polyfill.io/v2/polyfill.min.js?features=Object.assign,fetch"></script>
-		<script type="module" src="main-bundle.js"></script>
-		<script nomodule="nomodule" src="main-bundle-nomodule.js"></script>
+		<script type="module" src="main.js"></script>
+		<script nomodule="nomodule" src="main-nomodule.js"></script>
 	</body>
 </html>

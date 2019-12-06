@@ -38,6 +38,10 @@
     margin-bottom: 1rem;
 }
 
+.specialties-list {
+    list-style: none;
+}
+
 @media (--medium) {
 
     .doctor-image {
@@ -51,6 +55,7 @@
 
     .doctor-info__general {
         display: flex;
+        width: 60%;
     }
 
     .doctor-info-container {

@@ -93,8 +93,18 @@
 			"input": {
 				"id": "searchzipcode",
 				"type": "search",
+				"styleModifier": "js-value",
 				"placeholder": "Search Zip Code",
-				"attributes": []
+				"attributes": [
+				{
+					"name": "pattern",
+					"value": "[0-9]{5}"
+				},
+				{
+					"name": "maxlength",
+					"value": "5"
+				}
+			]
 			}
 		},
 		"searchFormButton" : {

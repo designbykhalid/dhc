@@ -2,21 +2,17 @@ import fetchUtils from "@degjs/fetch-utils";
 
 const searchForm = () => {
 
-
     const formEl = document.querySelector('.js-search-form');
-    const layoutEl = document.querySelector('.js-general-content');
-    const searchFieldSet = document.querySelector('.js-search-fieldset');
-    let searchInputEl;
+    const searchInputEl = formEl.querySelector('.js-search');
     const searchButtonEl = formEl.querySelector('.js-search-btn');
-
+    const layoutEl = document.querySelector('.js-general-content');
     const url = formEl.dataset.api;
 
     function init() {
-        searchInputEl = formEl.querySelector('.js-search');
-        formEl.addEventListener('submit', searchSubmit);
+        formEl.addEventListener('submit', onSearchSubmit);
     }
 
-    function searchSubmit(e) {
+    function onSearchSubmit(e) {
         e.preventDefault();
         getData();
     }
@@ -33,7 +29,7 @@ const searchForm = () => {
                 }
             }
         )
-        .then((data) => {
+        .then(data => {
             preloader(false);
             renderResults(data.results);
         })
@@ -46,10 +42,10 @@ const searchForm = () => {
     function preloader(showLoading) {
         if(showLoading === true) {
             searchButtonEl.value = 'Searching...';
-            searchFieldSet.disabled = true;
+            searchInputEl.disabled = true;
         } else {
             searchButtonEl.value = 'Search';
-            searchFieldSet.disabled = false; 
+            searchInputEl.disabled = false; 
         }
     }
 

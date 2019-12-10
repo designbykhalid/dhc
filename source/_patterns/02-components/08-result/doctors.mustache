@@ -1,6 +1,7 @@
 {{# doctorsList }}
+    <!--
     <h2 class="doctors-total-result">Total Results: <span class="js-active-results">3</span></h2>
-    <ul class="doctor-list">
+    <ul class="doctor-list js-doctor-list">
     {{# doctorItems}}
         <li class="doctor-list__item">
             <div class="doctor-info">
@@ -10,7 +11,10 @@
                     </div>
                     <div class="doctor-general">
                         <h3 class="doctor-name"><a href="doctorNameUrl">{{doctorName}}</a></h3>
-                        <p class="doctor-speciality">Women's Health Dermatology</p>
+                        <ul class="specialties-list">
+                            <li class="specialties-list__item">Women's Health Dermatology</li>
+                            <li class="specialties-list__item">Women's Health Dermatology</li>
+                        </ul>
                     </div>
                 </div>
                 {{# doctorLocation}}
@@ -33,4 +37,5 @@
         </li>
     {{/ doctorItems }}
     </ul>
+    -->
 {{/ doctorsList }}

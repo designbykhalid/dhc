@@ -14,9 +14,9 @@
 	}
 
 	&:disabled {
-		background: var(--color-gray-10);
+		background: var(--color-gray);
 		&:hover {
-			background: var(--color-gray-10);
+			background: var(--color-gray);
 			cursor: not-allowed;
 		}
 	}

@@ -8,7 +8,8 @@ module.exports = {
 			config: {
 				directories: directories({
 					imagesDestPath: 'patternlab/images',
-					fontsDestPath: 'patternlab/fonts'
+					fontsDestPath: 'patternlab/fonts',
+					apiPath: 'patternlab/api'
 				})
 			}
 		}

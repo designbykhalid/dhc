@@ -1,2 +1,4 @@
 node_modules/
 patternlab/
+export/
+dist/

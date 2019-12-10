@@ -36,7 +36,6 @@
     },
     "dependencies": {
         "@degjs/dom-utils": "^3.0.0",
-        "@degjs/fetch-utils": "^3.0.2",
-        "@degjs/form-mapper": "^4.0.0"
+        "@degjs/fetch-utils": "^3.0.2"
     }
 }

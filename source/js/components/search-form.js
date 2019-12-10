@@ -1,17 +1,18 @@
 import fetchUtils from "@degjs/fetch-utils";
-import formMapper from "@degjs/form-mapper";
 
 const searchForm = () => {
 
 
     const formEl = document.querySelector('.js-search-form');
     const layoutEl = document.querySelector('.js-general-content');
-    const searchInputEl = formEl.querySelector('.js-search');
+    const searchFieldSet = document.querySelector('.js-search-fieldset');
+    let searchInputEl;
     const searchButtonEl = formEl.querySelector('.js-search-btn');
 
     const url = formEl.dataset.api;
 
     function init() {
+        searchInputEl = formEl.querySelector('.js-search');
         formEl.addEventListener('submit', searchSubmit);
     }
 
@@ -25,7 +26,7 @@ const searchForm = () => {
         fetchUtils.getJSON(
             url,
             {
-                body: JSON.stringify(formMapper.getValues(searchInputEl)),
+                body: JSON.stringify(searchInputEl.value),
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -42,13 +43,13 @@ const searchForm = () => {
         });
     }
 
-    function preloader(isSearching) {
-        if(isSearching === true) {
+    function preloader(showLoading) {
+        if(showLoading === true) {
             searchButtonEl.value = 'Searching...';
-            searchButtonEl.disabled = true;
+            searchFieldSet.disabled = true;
         } else {
             searchButtonEl.value = 'Search';
-            searchButtonEl.disabled = false; 
+            searchFieldSet.disabled = false; 
         }
     }
 
@@ -98,9 +99,7 @@ const searchForm = () => {
     }
 
     function renderResults(data) {
-        layoutEl.innerHTML = '';
         layoutEl.innerHTML = renderDoctorsSearchResult(data);
-
     }
 
     init();

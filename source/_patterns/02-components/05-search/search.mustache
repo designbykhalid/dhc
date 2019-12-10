@@ -1,19 +1,21 @@
 {{#search}}
     <div class="search-form">
         <form class="js-search-form" data-api="../../api/doctors.json">
-            <div class="search">
-                <div class="search__input">
-                    {{#searchFormEelements}}
-                        {{> basics-label}}
-                        {{> basics-input}}
-                    {{/searchFormEelements}}
+            <fieldset class="js-search-fieldset">
+                <div class="search">
+                    <div class="search__input">
+                        {{#searchFormEelements}}
+                            {{> basics-label}}
+                            {{> basics-input}}
+                        {{/searchFormEelements}}
+                    </div>
+                    <div class="search__button">
+                        {{#searchFormButton}}
+                            {{> basics-input}}
+                        {{/searchFormButton}}
+                    </div>
                 </div>
-                <div class="search__button">
-                    {{#searchFormButton}}
-                        {{> basics-input}}
-                    {{/searchFormButton}}
-                </div>
-            </div>
+            </fieldset>
         </form>
     </div>
 {{/search}}

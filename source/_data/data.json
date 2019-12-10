@@ -93,7 +93,7 @@
 			"input": {
 				"id": "searchzipcode",
 				"type": "search",
-				"styleModifier": "js-value",
+				"styleModifier": "js-search",
 				"placeholder": "Search Zip Code",
 				"attributes": [
 				{
@@ -112,7 +112,7 @@
 				"id": "button",
 				"type": "submit",
 				"value": "Search",
-				"styleModifier": "button button--primary"
+				"styleModifier": "button button--primary js-search-btn"
 			}
 		}
 

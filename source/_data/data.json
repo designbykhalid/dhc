@@ -125,6 +125,7 @@
 		},
 		"input": {
 			"id": "range-input",
+			"styleModifier": "js-range",
 			"type": "range",
 			"value": "30",
 			"attributes": [
@@ -186,7 +187,7 @@
 							"input": {
 								"name": "male",
 								"value": "male",
-								"cssClass": "gender-checkbox",
+								"styleModifier": "gender-checkbox js-checkbox",
 								"type": "checkbox"
 							}
 						}
@@ -202,7 +203,7 @@
 							"input": {
 								"name": "female",
 								"value": "female",
-								"cssClass": "gender-checkbox",
+								"styleModifier": "gender-checkbox js-checkbox",
 								"type": "checkbox"
 							}
 						}
@@ -218,7 +219,7 @@
 							"input": {
 								"name": "nopreference",
 								"value": "nopreference",
-								"cssClass": "gender-checkbox",
+								"styleModifier": "gender-checkbox js-checkbox",
 								"type": "checkbox"
 							}
 						}

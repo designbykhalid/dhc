@@ -1,16 +1,20 @@
 <div class="wrapper">
 	{{> components-header }}
 	<main id="{{ mainId }}" class="main-content">
-		<div class="container shim">
+		<div class="container shim js-api" data-api="../../api/doctors.json">
 			{{> components-hero }}
 			{{> components-search }}
 			<div class="content content--2col-left">
-			<div class="sidebar-content">
-				{{> components-distance }}
-				{{> components-gender }}
-			</div>
-			<div class="general-content js-general-content">
-				{{> components-doctors }}
+			<div class="results-container js-results-container is-vishidden">
+				<div class="sidebar-content">
+					<form class="js-filters-form">
+						{{> components-distance }}
+						{{> components-gender }}
+					</form>
+				</div>
+				<div class="general-content js-general-content">
+					{{> components-doctors }}
+				</div>
 			</div>
 		</div>
 	</main>

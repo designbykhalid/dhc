@@ -1,45 +1,35 @@
-import results from './results.js';
-import ajaxData from './ajax.js';
+const genderFilter = (settings) => {
 
-const genderFilter = () => {
-
-    const checkBoxEls = [...document.querySelectorAll('.js-checkbox')];
-    let checkBoxElValues;
-
-    let doctor =  results();
-    let ajax = ajaxData();
+    const radioEls = [...document.querySelectorAll('.js-radio')];
 
     function init() {
-        checkBoxEls.forEach(item => {
+        radioEls.forEach(item => {
             item.addEventListener('change', onCheckBoxChange);
         });
     }
 
-    function getData() {
-        const options = {
-            fetchParams: {
-                body: JSON.stringify(checkBoxElValues),
-                method: 'POST'
-            }
-        }
+    function getCheckBoxValues() {
+        const genders = radioEls.filter(item => item.checked).map(item => item.value.toLowerCase());
+        return { genders: genders.toString()};
+    }
 
-        ajax.fetchData(options).then(data => {   
-            doctor.renderResults(data.results);
-        })
-        .catch(error => {
-            alert(error);
+    function onCheckBoxChange() {
+        settings.onFilterChange(getCheckBoxValues());
+    }
+
+    function disable(isDisabled) {
+        radioEls.forEach(item => {
+            item.disabled = isDisabled;
         });
     }
 
 
-    function onCheckBoxChange(e) {
-        e.preventDefault();
-        checkBoxElValues = {};
-        checkBoxEls.forEach(item => checkBoxElValues[item.value] = item.checked);
-        getData();
+    init();
+
+    return {
+        disable
     }
 
-    init();
 }
 
 export default genderFilter;

@@ -1,8 +1,11 @@
-
-
-const results = () => {
+const results = (data) => {
 
     const layoutEl = document.querySelector('.js-general-content');
+
+
+    function init() {
+        renderResults(data);
+    }
 
     function renderLocations(item) {
         return `<ul class="doctor-location">
@@ -13,7 +16,6 @@ const results = () => {
                         </li>`).join('')}
                 </ul>`
     }
-
 
     function renderSpecialties(item) {
         return `<ul class="specialties-list">
@@ -35,6 +37,7 @@ const results = () => {
                                         </div>
                                         <div class="doctor-general">
                                             <h3 class="doctor-name"><a href="${item.url}" target="_blank">${item.fullName}</a></h3>
+                                            <h4 class="doctor-gender">Gender: ${item.gender} </h4>
                                             ${renderSpecialties(item)}
                                         </div>
                                     </div>
@@ -51,9 +54,8 @@ const results = () => {
         layoutEl.innerHTML = renderDoctorsSearchResult(data);
     }
 
-    return {
-        renderResults
-    } 
+    init();
+
 }
 
 export default results;

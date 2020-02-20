@@ -165,7 +165,7 @@
 				"stepNumber": "25"
 			},
 			{
-				"stepValue": "30",
+				"stepValue": "all",
 				"stepNumber": "All"
 			}
 		],
@@ -185,10 +185,10 @@
 
 							},
 							"input": {
-								"name": "male",
+								"name": "gender",
 								"value": "male",
-								"styleModifier": "gender-checkbox js-checkbox",
-								"type": "checkbox"
+								"styleModifier": "gender-checkbox js-radio",
+								"type": "radio"
 							}
 						}
 					},
@@ -201,10 +201,10 @@
 
 							},
 							"input": {
-								"name": "female",
+								"name": "gender",
 								"value": "female",
-								"styleModifier": "gender-checkbox js-checkbox",
-								"type": "checkbox"
+								"styleModifier": "gender-checkbox js-radio",
+								"type": "radio"
 							}
 						}
 					},
@@ -217,10 +217,17 @@
 
 							},
 							"input": {
-								"name": "nopreference",
+								"name": "gender",
 								"value": "nopreference",
-								"styleModifier": "gender-checkbox js-checkbox",
-								"type": "checkbox"
+								"styleModifier": "gender-checkbox js-radio",
+								"type": "radio",
+								"attributes":[
+									{
+									"name": "checked",
+									"value": "checked"
+									}
+									
+								]
 							}
 						}
 					}

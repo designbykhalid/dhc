@@ -1,8 +1,8 @@
 const path = require('path');
 
-const rollupFiles = {
-    'source/js/main.js': 'main.js'
-};
+const rollupInputFiles = [
+    'source/js/index.js'
+];
 
 const legacyBabelPresets = [
     [
@@ -24,16 +24,16 @@ const modernBabelPresets = [
     ]
 ];
 
-function createRollupOutput(outputFile, isModern = true) {
+function rollupOutput(destPath, isModern) {
     return [
         {
-            file: outputFile,
-            format: isModern ? "es" : "iife"
+            dir: isModern ? destPath : path.join(destPath, 'nomodule'),
+            format: isModern ? "es" : "system"
         }
-    ]
+    ];
 }
 
-function createRollupPlugins(isModern, minify) {
+function rollupPlugins(isModern, minify) {
     const plugins = [
         require('rollup-plugin-replace')({
             ENVIRONMENT: () => JSON.stringify(process.env.NODE_ENV || 'development'),
@@ -45,13 +45,35 @@ function createRollupPlugins(isModern, minify) {
                 'node_modules/@degjs/**'
             ],
             babelrc: false,
+            plugins: [
+                "@babel/plugin-transform-react-jsx",
+                "@babel/plugin-proposal-class-properties"
+            ],
             presets: isModern ? modernBabelPresets : legacyBabelPresets
         }),
         require('rollup-plugin-node-resolve')({
             browser: true
         }),
         require('rollup-plugin-commonjs')({
-            include: 'node_modules/**'
+            include: 'node_modules/**',
+            namedExports: {
+                'node_modules/react/index.js': [
+                    'Component',
+                    'PureComponent',
+                    'Fragment',
+                    'Children',
+                    'createElement',
+                    'cloneElement',
+                    'createContext',
+                    'useRef',
+                    'useState',
+                    'useEffect',
+                    'useLayoutEffect'
+                ],
+                'node_modules/react-dom/index.js': [
+                    'render'
+                ]
+            }
         })
     ];
 
@@ -62,33 +84,27 @@ function createRollupPlugins(isModern, minify) {
     return plugins;
 }
 
-function getOutputFilepath(outputFilename, destPath, isModern) {
-    const filename = isModern ?
-        outputFilename :
-        `${path.basename(outputFilename, '.js')}-nomodule.js`;
-
-    return path.join(destPath, filename);
-}
-
-function createRollupConfigForFile(inputFile, outputFile, isModern, minify) {
-    return {
-        input: inputFile,
-        output: createRollupOutput(outputFile, isModern),
-        plugins: createRollupPlugins(isModern, minify)
-    }
-}
-
 module.exports = {
     rollupConfig: function (destPath, minify = false) {
-        return Object.keys(rollupFiles).reduce((accum, inputFile) => {
-
-            const outputFile = getOutputFilepath(rollupFiles[inputFile], destPath, true);
-            accum.push(createRollupConfigForFile(inputFile, outputFile, true, minify));
-
-            const legacyOutputFile = getOutputFilepath(rollupFiles[inputFile], destPath, false);
-            accum.push(createRollupConfigForFile(inputFile, legacyOutputFile, false, minify));
-
-            return accum;
-        }, []);
+        return [
+            {
+                input: rollupInputFiles,
+                output: rollupOutput(destPath, true),
+                plugins: rollupPlugins(true, minify)
+            },
+            {
+                input: rollupInputFiles,
+                output: rollupOutput(destPath, false),
+                plugins: rollupPlugins(false, minify)
+            }
+        ]
+    },
+    copyConfig: function (destPath) {
+        return {
+            directories: [{
+                src: 'node_modules/systemjs/dist/s.min.js',
+                dest: path.join(destPath, '/systemjs')
+            }]
+        };
     }
 };

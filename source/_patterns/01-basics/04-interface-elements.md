@@ -1,1 +1,0 @@
-Interface elements such as buttons and form fields.

@@ -28,17 +28,6 @@ module.exports = {
 						]
 					},
 					{
-						name: 'patterns',
-						paths: ['source/_patterns/**/*','source/_data/**/*','source/_meta/**/*','source/_annotations/**/*'],
-						events: ['add', 'change', 'delete'],
-						tasks: [
-							{
-								name: 'build',
-								subTasks: ['patterns']
-							}
-						]
-					},
-					{
 						name: 'static',
 						paths: ['source/fonts/**/*', 'source/images/**/*'],
 						events: ['add', 'change', 'delete'],

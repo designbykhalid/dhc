@@ -5,9 +5,10 @@ module.exports = {
 			name: '@deg-skeletor/plugin-express',
 			config: {
 				port: process.env.PORT || 3001,
+				https: false,
 				entryPoints: [
 					{
-						entry: '../patternlab',
+						entry: '../app',
 						route: '/'
 					}
 				],

@@ -1,5 +1,4 @@
-const path = require('path');
-const {files, plugins} = require('../common/css.config.js');
+const { files, plugins } = require('../common/css.config.js');
 
 module.exports = {
 	name: 'css',
@@ -8,11 +7,7 @@ module.exports = {
 			name: '@deg-skeletor/plugin-postcss',
 			config: {
 				files: [
-					...files('patternlab/css/'),
-					{
-						src: path.resolve('source/css/styleguide.css'),
-						dest: path.resolve('patternlab/css/styleguide.css')
-					}
+					...files('app/css/')
 				],
 				plugins
 			}

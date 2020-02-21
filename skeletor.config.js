@@ -5,18 +5,7 @@ module.exports = {
 			subTasks: [
 				require('./skeletor/build/css.config.js'),
 				require('./skeletor/build/js.config.js'),
-				require('./skeletor/build/patterns.config.js'),
 				require('./skeletor/build/static.config.js')
-			]
-		},
-		{
-			name: 'export',
-			environment: 'production',
-			subTasks: [
-				require('./skeletor/export/css.config.js'),
-				require('./skeletor/export/js.config.js'),
-				require('./skeletor/export/patterns.config.js'),
-				require('./skeletor/export/static.config.js')
 			]
 		},
 		{

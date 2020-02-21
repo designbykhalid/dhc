@@ -1,4 +1,4 @@
-const {directories} = require('../common/static.config.js');
+const { directories } = require('../common/static.config.js');
 
 module.exports = {
 	name: 'static',
@@ -6,11 +6,12 @@ module.exports = {
 		{
 			name: '@deg-skeletor/plugin-copy',
 			config: {
-				directories: directories({
-					imagesDestPath: 'patternlab/images',
-					fontsDestPath: 'patternlab/fonts',
-					apiPath: 'patternlab/api'
-				})
+				directories: [
+					...directories({
+						imagesDestPath: 'app/images',
+						fontsDestPath: 'app/fonts'
+					})
+				]
 			}
 		}
 	]

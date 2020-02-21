@@ -1,19 +1,15 @@
 const path = require('path');
 
 module.exports = {
-	directories: function({imagesDestPath, fontsDestPath, apiPath}) {
+	directories: function({imagesDestPath, fontsDestPath}, isExport = false) {
 		return [
             {
-                src: 'source/images',
+                src: isExport ? 'source/images/{,!(sample)/**/}*' : 'source/images',
                 dest: path.resolve(imagesDestPath)
             },
             {
                 src: 'source/fonts',
                 dest: path.resolve(fontsDestPath)
-            },
-            {
-                src: 'source/api',
-                dest: path.resolve(apiPath)
             }
         ];
 	}

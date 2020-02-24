@@ -125,7 +125,6 @@
 		},
 		"input": {
 			"id": "range-input",
-			"styleModifier": "js-range",
 			"type": "range",
 			"value": "30",
 			"attributes": [
@@ -165,7 +164,7 @@
 				"stepNumber": "25"
 			},
 			{
-				"stepValue": "all",
+				"stepValue": "30",
 				"stepNumber": "All"
 			}
 		],
@@ -185,10 +184,10 @@
 
 							},
 							"input": {
-								"name": "gender",
+								"name": "male",
 								"value": "male",
-								"styleModifier": "gender-checkbox js-radio",
-								"type": "radio"
+								"cssClass": "gender-checkbox",
+								"type": "checkbox"
 							}
 						}
 					},
@@ -201,10 +200,10 @@
 
 							},
 							"input": {
-								"name": "gender",
+								"name": "female",
 								"value": "female",
-								"styleModifier": "gender-checkbox js-radio",
-								"type": "radio"
+								"cssClass": "gender-checkbox",
+								"type": "checkbox"
 							}
 						}
 					},
@@ -217,17 +216,10 @@
 
 							},
 							"input": {
-								"name": "gender",
+								"name": "nopreference",
 								"value": "nopreference",
-								"styleModifier": "gender-checkbox js-radio",
-								"type": "radio",
-								"attributes":[
-									{
-									"name": "checked",
-									"value": "checked"
-									}
-									
-								]
+								"cssClass": "gender-checkbox",
+								"type": "checkbox"
 							}
 						}
 					}

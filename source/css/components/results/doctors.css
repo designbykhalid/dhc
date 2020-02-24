@@ -42,11 +42,6 @@
     list-style: none;
 }
 
-.doctor-gender {
-    font-size: .8em;
-    margin-bottom: .7em;
-}
-
 @media (--medium) {
 
     .doctor-image {

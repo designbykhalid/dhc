@@ -136,7 +136,7 @@
          ],
          "url":"#",
          "image":"../../images/doctor-place-holder.jpg",
-         "gender": "Female",
+         "gender": null,
          "bio": "",
          "locations":[
             {
@@ -161,7 +161,7 @@
          ],
          "url":"#",
          "image":"../../images/doctor-place-holder.jpg",
-         "gender":"Female",
+         "gender":null,
          "bio": "",
          "locations":[
             {
@@ -247,43 +247,6 @@
                "lat":0,
                "lng":0,
                "distance":16.92244050719052,
-               "phone":null,
-               "image":null,
-               "availability":null
-            }
-         ]
-      },
-      {
-         "fullName":"Dr. James Bolton",
-         "lastName":"Test",
-         "specialties":[
-            "Neurology"
-         ],
-         "url":"#",
-         "image":"../../images/doctor-place-holder.jpg",
-         "gender":"Female",
-         "bio": "",
-         "locations":[
-            {
-               "name":"Olathe",
-               "url":"https://www.google.com",
-               "streetAddress":null,
-               "cityStateZip":null,
-               "lat":0,
-               "lng":0,
-               "distance":1.1210731921023,
-               "phone":null,
-               "image": "../../images/doctor-place-holder.jpg",
-               "availability":null
-            },
-            {
-               "name":"Lenexa",
-               "url":"https://www.google.com",
-               "streetAddress":null,
-               "cityStateZip":null,
-               "lat":0,
-               "lng":0,
-               "distance":3.92244050719052,
                "phone":null,
                "image":null,
                "availability":null

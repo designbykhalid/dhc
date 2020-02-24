@@ -11,7 +11,7 @@
     max-width: var(--width-page);
 }
 
-.content--2col-left {
+.results-container {
     display: flex;
     flex-direction: column;
 }
@@ -29,7 +29,7 @@
 }
 
 @media (--small) {
-    .content--2col-left {
+    .results-container {
         flex-direction: row;
 
         .general-content {

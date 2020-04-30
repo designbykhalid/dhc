@@ -32,4 +32,5 @@ const genderFilter = (settings) => {
 
 }
 
+
 export default genderFilter;

@@ -17,4 +17,5 @@ const updateDistanceFilterStatus = (settings) => {
     init();
 }
 
+
 export default updateDistanceFilterStatus;

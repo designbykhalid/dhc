@@ -27,4 +27,5 @@ const searchForm = (settings) => {
 
 }
 
+
 export default searchForm;

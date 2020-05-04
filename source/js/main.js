@@ -5,6 +5,8 @@ import genderFilter from './components/gender-filter.js';
 import results from './components/results.js';
 import fetchUtils from "@degjs/fetch-utils";
 
+const filterActiveDistanceEl = document.querySelector('.js-active-distance');
+const filterZipCodeEl = document.querySelector('.js-active-zipcode');
 
 
 const main = function() {
@@ -44,6 +46,8 @@ const main = function() {
         activeFilterVals.zipCode = searchVal;
 
         updateDistanceFilterStatus({
+            ActiveDistanceEl: filterActiveDistanceEl,
+            zipCodeEl: filterZipCodeEl,
             distanceVal: activeFilterVals.distance, 
             zipCodeVal: activeFilterVals.zipCode
         });
@@ -98,6 +102,8 @@ const main = function() {
         results(filteredArray);
 
         updateDistanceFilterStatus({
+            ActiveDistanceEl: filterActiveDistanceEl,
+            zipCodeEl: filterZipCodeEl,
             distanceVal: activeFilterVals.distance, 
             zipCodeVal: activeFilterVals.zipCode
         });

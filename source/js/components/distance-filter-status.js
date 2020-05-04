@@ -1,12 +1,15 @@
+const filterActiveDistanceEl = document.querySelector('.js-active-distance');
+const filterZipCodeEl = document.querySelector('.js-active-zipcode');
+
 const updateDistanceFilterStatus = (settings) => {
-    
+
     function init() {
         updateDistanceFilterValues();
     }
 
     function updateDistanceFilterValues() {
-        settings.ActiveDistanceEl.innerHTML = settings.distanceVal;
-        settings.zipCodeEl.innerHTML = settings.zipCodeVal;
+        filterActiveDistanceEl.innerHTML = settings.distanceVal;
+        filterZipCodeEl.innerHTML = settings.zipCodeVal;
     }
 
     init();

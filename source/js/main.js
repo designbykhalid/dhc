@@ -11,6 +11,7 @@ const main = function() {
     let resultsData;
     let searchFormInst;
     let distanceFilterInst;
+    let updateDistanceFilterStatusInst;
     let genderFilterInst;
     let activeFilterVals = {
         genders: 'nopreference', 
@@ -35,6 +36,7 @@ const main = function() {
             onFilterChange
         });
 
+        updateDistanceFilterStatusInst = updateDistanceFilterStatus();
 
     };
 
@@ -42,10 +44,11 @@ const main = function() {
         disableFilters();
         activeFilterVals.zipCode = searchVal;
 
-        updateDistanceFilterStatus({
+        updateDistanceFilterStatusInst.updateDistanceFilterValues({
             distanceVal: activeFilterVals.distance, 
             zipCodeVal: activeFilterVals.zipCode
         });
+
 
         fetchUtils.getJSON(
             url,
@@ -96,7 +99,7 @@ const main = function() {
 
         results(filteredArray);
 
-        updateDistanceFilterStatus({
+        updateDistanceFilterStatusInst.updateDistanceFilterValues({
             distanceVal: activeFilterVals.distance, 
             zipCodeVal: activeFilterVals.zipCode
         });

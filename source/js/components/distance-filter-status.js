@@ -1,6 +1,6 @@
 
 
-const updateDistanceFilterStatus = () => {
+const distanceFilterStatus = () => {
     const filterActiveDistanceEl = document.querySelector('.js-active-distance');
     const filterZipCodeEl = document.querySelector('.js-active-zipcode');
 
@@ -15,4 +15,4 @@ const updateDistanceFilterStatus = () => {
     }
 }
 
-export default updateDistanceFilterStatus;
+export default distanceFilterStatus;

@@ -1,5 +1,5 @@
 import searchForm from './components/search-form.js';
-import updateDistanceFilterStatus from './components/distance-filter-status.js';
+import distanceFilterStatus from './components/distance-filter-status.js';
 import distanceFilter from './components/distance-filter.js';
 import genderFilter from './components/gender-filter.js';
 import results from './components/results.js';
@@ -11,7 +11,7 @@ const main = function() {
     let resultsData;
     let searchFormInst;
     let distanceFilterInst;
-    let updateDistanceFilterStatusInst;
+    let distanceFilterStatusInst;
     let genderFilterInst;
     let activeFilterVals = {
         genders: 'nopreference', 
@@ -36,7 +36,7 @@ const main = function() {
             onFilterChange
         });
 
-        updateDistanceFilterStatusInst = updateDistanceFilterStatus();
+        distanceFilterStatusInst = distanceFilterStatus();
 
     };
 
@@ -44,7 +44,7 @@ const main = function() {
         disableFilters();
         activeFilterVals.zipCode = searchVal;
 
-        updateDistanceFilterStatusInst.updateDistanceFilterValues({
+        distanceFilterStatusInst.updateDistanceFilterValues({
             distanceVal: activeFilterVals.distance, 
             zipCodeVal: activeFilterVals.zipCode
         });
@@ -99,7 +99,7 @@ const main = function() {
 
         results(filteredArray);
 
-        updateDistanceFilterStatusInst.updateDistanceFilterValues({
+        distanceFilterStatusInst.updateDistanceFilterValues({
             distanceVal: activeFilterVals.distance, 
             zipCodeVal: activeFilterVals.zipCode
         });

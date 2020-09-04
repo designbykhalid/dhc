@@ -1,12 +1,8 @@
 /* Layout Styles */
-.container {
+
+.page-width {
     padding: 1rem;
     background-color: var(--color-white);
-    max-width: var(--page-width);
-    margin: 0 auto;
-}
-
-.shim {
     margin: 0 auto;
     max-width: var(--width-page);
 }

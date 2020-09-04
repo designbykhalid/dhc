@@ -3,7 +3,7 @@ import React from 'react';
 const Distance = () => {
     return (
         <div className="filter-section filter-section__distance">
-            <label htmlFor="doctorSearchRadius" className="label legend-label">Distance</label>
+            <label htmlFor="range-input" className="label legend-label">Distance</label>
             <input className="input js-range" id="range-input" name="range-input" type="range" defaultValue="30" min="5" max="30" step="5" />
             <ol className="range-label">
                 <li className="range-label__item" data-step="5"> 5 </li>

@@ -1,14 +1,10 @@
 import React from 'react';
 
-class DoctorSpecialtiesListItem extends React.Component {
-  
-    render() {
-        console.log(this.props.specialties);
-      return (
-      <li className="specialties-list__item">{this.props.specialties}</li>
-      )
-    }
-  }
+const DoctorSpecialtiesListItem = ({specialty}) => {
+    return (
+      <li className="specialties-list__item">{specialty}</li>
+    )
+}
 
 
 export default DoctorSpecialtiesListItem;

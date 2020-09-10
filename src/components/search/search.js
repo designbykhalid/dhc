@@ -1,8 +1,6 @@
 import React from 'react';
 
-const Search = ({
-    onZipCodeChange
-}) => {
+const Search = () => {
     return (
         <div className="search-form">
             <form className="js-search-form">

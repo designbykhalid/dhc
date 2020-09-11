@@ -1,17 +1,13 @@
 /* Layout Styles */
-.container {
+
+.page-width {
     padding: 1rem;
     background-color: var(--color-white);
-    max-width: var(--page-width);
-    margin: 0 auto;
-}
-
-.shim {
     margin: 0 auto;
     max-width: var(--width-page);
 }
 
-.results-container {
+.content-container {
     display: flex;
     flex-direction: column;
 }
@@ -24,15 +20,15 @@
     padding: 3rem 0;
 }
 
-.general-content {
+.results-content {
     flex-grow: 1;
 }
 
 @media (--small) {
-    .results-container {
+    .content-container {
         flex-direction: row;
 
-        .general-content {
+        .results-content {
             padding-left: 4rem;
         }
     }

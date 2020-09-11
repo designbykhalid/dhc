@@ -15,13 +15,11 @@
 	--color-green:  #4b9c3d;
 	--color-green-10:  #5ab44b;
 
-	--color-text: var(--color-blue-20);
-
 	--font-family-primary: 'Cabin', sans-serif;
 
 	--base-font-size: 1em;
 
-	--width-page: 62rem;
+	--width-page: 61.25em;
 	--spacing-horizontal: 1rem;
 	--spacing-vertical: 1.5rem;
 	--gutter-width: 1rem;

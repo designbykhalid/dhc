@@ -25,14 +25,14 @@ class App extends React.Component {
 			<>
 			   <Search />
 			   <div className="content content--2col-left">
-					<div className="results-container is-vishiden">
+					<div className="content-container">
 						<div className="sidebar-content">
-							<form className="js-filters-form">
+							<form className="filters-form">
 								<Distance />
 								<Gender />
 							</form>
 						</div>
-						<div className="general-content js-general-content ">
+						<div className="results-content">
 							<TotalResults totalResults={this.state.results.length} />
 							<DoctorInfoList doctorsList={this.state.results} />
 						</div>

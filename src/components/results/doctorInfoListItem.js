@@ -16,7 +16,7 @@ const DoctorInfoListItem = ({
             <div className="doctor-info">
                 <div className="doctor-info__general">
                     <div className="doctor-image">
-                        <img src={image} alt="" />
+                        <img src={image} alt={fullName} />
                     </div>
                     
                     <div className="doctor-general">

@@ -1,5 +1,4 @@
 import React from 'react';
-import DoctorSpecialtiesListItem from './DoctorSpecialtiesListItem.js'
 
 const DoctorSpecialtiesList = ({specialties}) => {
     return (
@@ -7,6 +6,12 @@ const DoctorSpecialtiesList = ({specialties}) => {
           { specialties.map((item, index) => <DoctorSpecialtiesListItem  key={index} specialty={item} />) }
       </ul>
     )
+}
+
+const DoctorSpecialtiesListItem = ({specialty}) => {
+  return (
+    <li className="specialties-list__item">{specialty}</li>
+  )
 }
 
 

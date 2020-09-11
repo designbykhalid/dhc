@@ -1,12 +1,9 @@
 import React from 'react';
 
-class TotalResults extends React.Component {  
-  render() {
+const TotalResults = ({totalResults = '0'}) => {
     return (
-    <h2 className="doctors-total-result">Total Results: <span>{this.props.totalResults}</span></h2>
+    <h2 className="doctors-total-result">Total Results: <span>{totalResults}</span></h2>
     )
-  }
 }
-
 
 export default TotalResults;

@@ -13,7 +13,7 @@ module.exports = {
         contentBase: './dist',
         historyApiFallback: true,
         before: (app) => {
-            app.get('/api/doctors', (req, res) => {
+            app.post('/api/doctors', (req, res) => {
                 res.json(doctorsData);
             });
         }

@@ -1,61 +1,43 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Search from './search/search.js';
 import Gender from './gender/gender.js';
 import Distance from './distance/distance.js';
 import DoctorInfoList from './results/doctorInfoList.js';
 import TotalResults from './results/totalResults.js';
-import fetchUtils from '@degjs/fetch-utils';
 
 
-class App extends React.Component {
-    constructor(props) {
-		super(props);
-		this.state = {     
-			results: [],
-			filteredResults: [],
-			zipCode: '',
-			genders: 'nopreference',
-			distance: 'all'
-		};  
+const App = () => {
+	
+	const [finalResults, setFinalResults] = useState({
+		results: [],
+		filteredResults: [],
+		zipCode: '',
+		genders: 'nopreference',
+		distance: 'all'
+	});
+	
+    useEffect(() => {
+		onFilterChange();
+	}, [finalResults.genders, finalResults.distance, finalResults.results]);
+	
+
+	const handleSearch = (searchResults) => {
+		setFinalResults({...finalResults, ...searchResults});
 	}
 
-
-	handleZipCode = (val) => {
-		this.setState({zipCode: val},() => {this.onFilterChange()});
+	const handleGender = (val) => {
+		setFinalResults({...finalResults, genders: val});
 	}
 
-	handleGender = (val) => {
-		this.setState({genders: val},() => {this.onFilterChange()});
-	}
-
-	handleDistance = (val) => {
-		this.setState({distance: val},() => {this.onFilterChange()});
+	const handleDistance = (val) => {
+		setFinalResults({...finalResults, distance: val});
 	}
 	
-	componentDidMount() {
 
-		const url = 'http://localhost:8080/api/doctors';
-        fetchUtils.getJSON(
-            url,
-            {
-                method: 'GET',
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            })
-            .then(data => {
-				this.setState({results: data.results});
-            })
-            .catch(error => {
-                console.log(error);
-			});
-	}
-
-    onFilterChange() {
-
-        const distance = this.state.distance;
-        const genders = this.state.genders;
-        const isDistanceAll = this.state.distance === 'all';
+    const onFilterChange = () => {
+        const distance = finalResults.distance;
+        const genders = finalResults.genders;
+        const isDistanceAll = finalResults.distance === 'all';
 		const isGendersNoPreference = genders === 'nopreference';
 
 	
@@ -67,36 +49,41 @@ class App extends React.Component {
             return isGendersNoPreference || item.gender.toLowerCase() === genders;
         }
 
-        const filteredArray =  this.state.results
+        const filteredArray =  finalResults.results
             .filter(filterbyGender)
             .filter(item => item.locations.some(filterByDistance))
             .map(item => ({
                 ...item, 
                 locations: item.locations.filter(filterByDistance)
 			}));
-			this.setState({filteredResults: filteredArray})
+			setFinalResults({...finalResults, filteredResults: filteredArray})
 	}
-	
-	  
-	render() {
-		return (
-			<>
-			   <Search getZipCode={this.handleZipCode} />
-			   <div className="content content--2col-left">
-					<div className="content-container">
-						<div className="sidebar-content">
-							<Distance getDistance={this.handleDistance} zipCode={this.state.zipCode} />
-							<Gender getGender={this.handleGender} />
-						</div>
-						<div className="results-content">
-							<TotalResults totalResults={this.state.filteredResults.length} />
-							<DoctorInfoList doctorsList={this.state.filteredResults} />
-						</div>
-					</div>
-				</div>
-			</>
-		);
-	}
+
+	return (
+		<>
+			<Search getSearchResults={handleSearch} />
+			<div className="content content--2col-left">
+			{ finalResults.filteredResults.length ?  <ResultsContainer handleDistance={handleDistance} handleGender={handleGender} finalResults={finalResults} /> : '' }
+			</div>
+		</>
+	);
 }
+
+
+const ResultsContainer = ({handleDistance, handleGender, finalResults}) => {
+    return (
+		<div className="content-container">
+			<div className="sidebar-content">
+				<Distance getDistance={handleDistance} zipCode={finalResults.zipCode} />
+				<Gender getGender={handleGender} />
+			</div>
+
+			<div className="results-content">
+				<TotalResults totalResults={finalResults.filteredResults.length} />
+				<DoctorInfoList doctorsList={finalResults.filteredResults} />
+			</div>
+		</div>
+    );
+  }
 
 export default App;

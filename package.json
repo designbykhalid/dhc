@@ -19,7 +19,7 @@
         "@deg-skeletor/starterkit-mustache-default": "^1.0.1",
         "autoprefixer": "^8.6.5",
         "cssnano": "^3.10.0",
-        "jest": "^23.6.0",
+        "jest": "^29.7.0",
         "postcss-color-mod-function": "^2.4.3",
         "postcss-custom-media": "^6.0.0",
         "postcss-custom-properties": "^7.0.0",
